@@ -1,0 +1,23 @@
+# Baseline configuration: no security extensions enabled.
+# The reader summarizes documents; the executor holds the side-effecting tools.
+
+[entities.reader]
+host = "127.0.0.1"
+port = 8021
+endpoint = "http://127.0.0.1:8021/nlip"
+
+[entities.reader.security]
+ingress = []
+egress = []
+
+[entities.executor]
+host = "127.0.0.1"
+port = 8022
+endpoint = "http://127.0.0.1:8022/nlip"
+
+[entities.executor.security]
+ingress = []
+egress = []
+
+[user]
+default_target = "reader"
