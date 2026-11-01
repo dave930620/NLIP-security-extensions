@@ -5,8 +5,8 @@ Enable it at both ingress and egress of every agent:
 - Ingress (server): verify the request's grant, block if missing or invalid, and
   record any incoming provenance. This is where an agent learns what the user allowed.
 - Ingress (client): record provenance on responses from agents it delegated to.
-- Egress (client): attach the grant and this session's provenance to a delegated
-  request, so the restrictions and the taint survive the agent boundary.
+- Egress (client): attach a grant narrowed to the destination's tools, plus this
+  session's provenance, so the restrictions and the taint survive the agent boundary.
 - Egress (server): attach provenance to the response.
 
 The decision on tool calls is made by the tool gate in ``gate.py``.
@@ -27,6 +27,7 @@ from .tokens import (
     PROVENANCE_TOKEN,
     decode,
     decode_grant,
+    derive_grant,
     provenance_token,
 )
 
@@ -75,6 +76,11 @@ class TrustBridgeExtension(SecurityExtension):
         if context.grant is not None and context.grant["task_id"] != grant["task_id"]:
             self._log(event, "block", "grant belongs to a different task")
             return SecurityDecision.block("TrustBridge: grant belongs to a different task")
+        if settings.single_use_grants and not RUNTIME.bind_task(
+            event.local_entity, grant["task_id"], event.session.id, float(grant["exp"])
+        ):
+            self._log(event, "block", "grant already used by another session (replay)")
+            return SecurityDecision.block("TrustBridge: grant already used by another session")
         context.grant, context.grant_token = grant, str(token)
         return SecurityDecision.allow()
 
@@ -82,8 +88,7 @@ class TrustBridgeExtension(SecurityExtension):
         settings = RUNTIME.settings
         message = event.message.model_copy(deep=True)
         if event.component == "client" and context.grant_token is not None:
-            # Pass the grant through unchanged: a delegate never gets more than this.
-            message.add_token(context.grant_token, GRANT_TOKEN)
+            message.add_token(self._delegated_grant(event, context), GRANT_TOKEN)
         message.add_token(
             provenance_token(
                 context.tainted, context.sources, event.local_entity, settings.secret
@@ -91,6 +96,17 @@ class TrustBridgeExtension(SecurityExtension):
             PROVENANCE_TOKEN,
         )
         return SecurityDecision.replace(message, "attached TrustBridge context")
+
+    @staticmethod
+    def _delegated_grant(event: SecurityEvent, context: TrustContext) -> str:
+        """Grant for the destination: narrowed to its tools, never wider than ours."""
+        settings = RUNTIME.settings
+        if settings.capabilities is None:
+            return str(context.grant_token)
+        allow = settings.capabilities.get(event.peer or "", [])
+        return derive_grant(
+            str(context.grant_token), context.grant, allow, event.local_entity, settings.secret
+        )
 
     @staticmethod
     def _log(event: SecurityEvent, decision: str, reason: str) -> None:

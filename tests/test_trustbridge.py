@@ -28,13 +28,13 @@ def email_grant() -> dict:
     return decode_grant(token, DEV_SECRET)
 
 
-def event(point, message, session_id, component, entity="executor"):
+def event(point, message, session_id, component, entity="executor", peer="peer"):
     return SecurityEvent(
         point=point,
         message=message,
         session=NLIPSession(session_id),
         local_entity=entity,
-        peer="peer",
+        peer=peer,
         component=component,
     )
 
@@ -130,3 +130,54 @@ def test_requests_without_valid_grant_or_with_forged_provenance() -> None:
     message.add_token(sign({"type": "provenance", "tainted": False}, "attacker-key"), PROVENANCE_TOKEN)
     asyncio.run(extension.evaluate(event(EnforcementPoint.INGRESS, message, "s-forged", "server")))
     assert RUNTIME.context("s-forged").tainted
+
+
+def test_grant_cannot_be_replayed_into_another_session() -> None:
+    extension = TrustBridgeExtension()
+    grant_token = issue_grant("alice", "save_only")
+
+    def request() -> NLIPMessage:
+        message = NLIPMessage.text("summarize")
+        message.add_token(grant_token, GRANT_TOKEN)
+        return message
+
+    first = asyncio.run(extension.evaluate(event(EnforcementPoint.INGRESS, request(), "replay-a", "server")))
+    again = asyncio.run(extension.evaluate(event(EnforcementPoint.INGRESS, request(), "replay-a", "server")))
+    replay = asyncio.run(extension.evaluate(event(EnforcementPoint.INGRESS, request(), "replay-b", "server")))
+    assert first.action is SecurityAction.ALLOW
+    assert again.action is SecurityAction.ALLOW  # same conversation, later turn
+    assert replay.action is SecurityAction.BLOCK
+
+
+def test_delegated_grant_is_narrowed_and_cannot_be_widened() -> None:
+    capabilities = {"executor": ["save_summary", "send_email"]}
+    extension = TrustBridgeExtension(capabilities=capabilities)
+    root = issue_grant("alice", "email_manager", {"send_email.to": [BOB]})
+
+    request = NLIPMessage.text("Summarize and email Bob.")
+    request.add_token(root, GRANT_TOKEN)
+    asyncio.run(extension.evaluate(event(EnforcementPoint.INGRESS, request, "narrow-in", "server", "reader")))
+    link_outbound("narrow-out", "narrow-in")
+    delegated = asyncio.run(
+        extension.evaluate(
+            event(
+                EnforcementPoint.EGRESS, NLIPMessage.text("email Bob"), "narrow-out",
+                "client", "reader", peer="executor",
+            )
+        )
+    ).message
+    child = decode_grant(delegated.extract_token(GRANT_TOKEN), DEV_SECRET)
+    # parent allows read_document + send_email; executor only gets what it can use.
+    assert child["allow"] == ["send_email"]
+    assert child["constraints"] == {"send_email": {"to": [BOB]}}
+
+    # A delegate that re-signs a wider child (more tools, or an unpinned recipient)
+    # is rejected because the child must narrow its embedded parent.
+    parent = decode_grant(root, DEV_SECRET)
+    wider = dict(child, allow=["send_email", "delete_file"])
+    assert decode_grant(sign(wider, DEV_SECRET), DEV_SECRET) is None
+    unpinned = dict(child, constraints={})
+    assert decode_grant(sign(unpinned, DEV_SECRET), DEV_SECRET) is None
+    other_recipient = dict(child, constraints={"send_email": {"to": [ATTACKER]}})
+    assert decode_grant(sign(other_recipient, DEV_SECRET), DEV_SECRET) is None
+    assert parent["allow"] == ["read_document", "send_email"]

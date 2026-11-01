@@ -56,13 +56,25 @@ def decode(token: object, secret: str, *, check_signature: bool = True) -> dict 
     return payload if isinstance(payload, dict) else None
 
 
+MAX_DELEGATION_DEPTH = 5
+
+
 def decode_grant(
     token: object,
     secret: str,
     *,
     check_signature: bool = True,
     check_expiry: bool = True,
+    _depth: int = 0,
 ) -> dict | None:
+    """Verify a grant and, for a delegated grant, its whole chain back to the user.
+
+    A delegated grant embeds its parent token. It is valid only if the parent is valid
+    and the child is no wider: same task, a subset of tools, no later expiry, and every
+    argument the parent pinned is still pinned to a subset of the same values.
+    """
+    if _depth > MAX_DELEGATION_DEPTH:
+        return None
     grant = decode(token, secret, check_signature=check_signature)
     if grant is None or grant.get("type") != "grant":
         return None
@@ -70,7 +82,60 @@ def decode_grant(
         return None
     if check_expiry and float(grant.get("exp", 0)) < time.time():
         return None
+    if "parent" not in grant:
+        return grant
+
+    parent = decode_grant(
+        grant["parent"],
+        secret,
+        check_signature=check_signature,
+        check_expiry=check_expiry,
+        _depth=_depth + 1,
+    )
+    if parent is None or not _narrows(grant, parent):
+        return None
     return grant
+
+
+def _narrows(child: dict, parent: dict) -> bool:
+    if child.get("task_id") != parent.get("task_id"):
+        return False
+    if not set(child["allow"]) <= set(parent["allow"]):
+        return False
+    if float(child.get("exp", 0)) > float(parent.get("exp", 0)):
+        return False
+    child_pins = child.get("constraints", {})
+    for tool, pins in parent.get("constraints", {}).items():
+        if tool not in child["allow"]:
+            continue
+        for arg, values in pins.items():
+            child_values = child_pins.get(tool, {}).get(arg)
+            if child_values is None or not set(child_values) <= set(values):
+                return False
+    return True
+
+
+def derive_grant(
+    parent_token: str, parent: dict, allow: list[str], issuer: str, secret: str
+) -> str:
+    """Delegate a narrower grant: keep only ``allow`` tools that the parent already has."""
+    tools = [tool for tool in parent["allow"] if tool in allow]
+    payload = {
+        "type": "grant",
+        "task_id": parent["task_id"],
+        "task": parent.get("task"),
+        "user": parent.get("user"),
+        "allow": tools,
+        "constraints": {
+            tool: pins
+            for tool, pins in parent.get("constraints", {}).items()
+            if tool in tools
+        },
+        "exp": parent["exp"],
+        "issuer": issuer,
+        "parent": parent_token,
+    }
+    return sign(payload, secret)
 
 
 def provenance_token(tainted: bool, sources: list[str], issuer: str, secret: str) -> str:

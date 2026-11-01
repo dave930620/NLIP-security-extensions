@@ -9,6 +9,7 @@ State is process-local, like the SDK's own session store.
 from __future__ import annotations
 
 import json
+import time
 from dataclasses import dataclass, field, fields
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +41,11 @@ class Settings:
     check_expiry: bool = True
     use_provenance: bool = True
     require_grant: bool = True
+    # A grant serves one conversation per entity; reuse from another session is replay.
+    single_use_grants: bool = True
+    # Tools each peer can use. When set, a delegated grant is narrowed to the
+    # destination's tools (child = parent ∩ capabilities[peer]). Unset = pass through.
+    capabilities: dict[str, list[str]] | None = None
     # Tools whose results are attacker-controllable.
     untrusted_tools: tuple[str, ...] = ("read_document",)
     # Delegation itself is not gated; the grant travels with it instead.
@@ -59,6 +65,8 @@ class TrustRuntime:
         self._contexts: dict[str, TrustContext] = {}
         # Outbound client session id -> inbound session id it acts for.
         self._parents: dict[str, str] = {}
+        # (entity, task_id) -> (session id that first used the grant, grant expiry).
+        self._bound_tasks: dict[tuple[str, str], tuple[str, float]] = {}
 
     def configure(self, **options: Any) -> None:
         known = {f.name for f in fields(Settings)}
@@ -80,6 +88,21 @@ class TrustRuntime:
     def context(self, session_id: str) -> TrustContext:
         session_id = self._parents.get(session_id, session_id)
         return self._contexts.setdefault(session_id, TrustContext())
+
+    def bind_task(self, entity: str, task_id: str, session_id: str, expires: float) -> bool:
+        """Bind a grant to its first session at this entity. False if another owns it.
+
+        Each agent on the delegation path uses the same task once, in one conversation.
+
+        Bindings outlive evicted sessions until the grant expires, so an old grant
+        cannot be replayed into a fresh conversation.
+        """
+        now = time.time()
+        for task, (_, exp) in list(self._bound_tasks.items()):
+            if exp < now:
+                del self._bound_tasks[task]
+        owner = self._bound_tasks.setdefault((entity, task_id), (session_id, expires))[0]
+        return owner == session_id
 
     def forget(self, session_id: str) -> None:
         self._contexts.pop(session_id, None)

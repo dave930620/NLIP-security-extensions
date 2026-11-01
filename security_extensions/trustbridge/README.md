@@ -5,7 +5,9 @@ never had after a trusted agent forwards it. TrustBridge keeps two records apart
 makes both survive agent-to-agent (NLIP) and agent-to-tool boundaries:
 
 - **Authority** — a signed *grant* of what the user allowed, issued before any model
-  reads untrusted content (`authorizer.py`). It travels unchanged with every delegation.
+  reads untrusted content (`authorizer.py`). On every delegation it is narrowed to the
+  destination's tools (child ⊆ parent), and each agent accepts a grant in only one
+  conversation, so it cannot be widened or replayed.
 - **Provenance** — whether a session has read untrusted content. Recorded by trusted
   code after untrusted tools run, and carried to delegates in a signed token.
 
@@ -18,10 +20,10 @@ saw untrusted content.
 | File | Runs at | Role |
 |---|---|---|
 | `authorizer.py` | user login | Task template + user-given values → signed grant |
-| `extension.py` | NLIP ingress/egress | Verify grant (block if missing/invalid), attach grant + provenance when delegating, absorb provenance from peers |
+| `extension.py` | NLIP ingress/egress | Verify grant chain (block if missing, invalid, widened or replayed), attach a narrowed grant + provenance when delegating, absorb provenance from peers |
 | `gate.py` | before/after each tool call | `check()` decides; `claude_hooks()` wires it into Claude Agent SDK `PreToolUse`/`PostToolUse` |
 | `runtime.py` | in-process | Per-session grant + taint; links an outbound NLIP conversation to the inbound session it serves |
-| `tokens.py` | — | HMAC-signed `trustbridge_grant` / `trustbridge_provenance` token submessages |
+| `tokens.py` | — | HMAC-signed `trustbridge_grant` / `trustbridge_provenance` tokens; a delegated grant embeds its parent and must narrow it |
 
 ## Enabling it
 
@@ -53,6 +55,8 @@ saw untrusted content.
 | `verify_signature` | `true` | `false` = accept unsigned/forged tokens (ablation) |
 | `check_expiry` | `true` | `false` = accept expired grants (ablation) |
 | `require_grant` | `true` | Block NLIP requests without a valid grant |
+| `single_use_grants` | `true` | Block a grant reused by a second conversation at the same agent (replay) |
+| `capabilities` | none | `{agent = [tools]}`; narrows delegated grants to the destination's tools. Unset = pass the grant through unchanged |
 | `untrusted_tools` | `["read_document"]` | Tools whose results taint the session |
 | `control_args` | `{send_email = ["to", "cc"]}` | Arguments that decide where an action goes |
 | `decision_log` | none | JSONL file of every gate decision |
@@ -71,3 +75,6 @@ saw untrusted content.
   (e.g. a misleading summary), are out of scope.
 - Trusted components (authorizer, key, gate, agent integration) are assumed intact; a
   sensitive tool not routed through the gate is not protected.
+- All runtimes share one HMAC key, so a compromised agent could mint grants. Per-issuer
+  keys (e.g. public-key signatures per agent) would close this.
+- Replay protection is per process and in memory; it resets when an agent restarts.

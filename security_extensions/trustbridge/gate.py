@@ -82,6 +82,7 @@ def claude_hooks(session_id: str) -> dict[str, list]:
                 "tool": tool,
                 "args": args,
                 "tainted": context.tainted,
+                "grant_allow": context.grant["allow"] if context.grant else None,
                 "decision": "allow" if allowed else "deny",
                 "reason": reason,
             }

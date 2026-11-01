@@ -10,6 +10,11 @@ entrypoint = "security_extensions.trustbridge:TrustBridgeExtension"
 [security_extensions.trustbridge.options]
 decision_log = "agent_applications/trustbridge_demo/runtime/trustbridge_log.jsonl"
 
+# Tools each agent can use; a delegated grant is narrowed to the destination's tools.
+[security_extensions.trustbridge.options.capabilities]
+reader = ["read_document"]
+executor = ["save_summary", "send_email"]
+
 [entities.reader]
 host = "127.0.0.1"
 port = 8021
