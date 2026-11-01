@@ -1,0 +1,32 @@
+# Full TrustBridge: grant (authority) + provenance, checked at NLIP boundaries and
+# before every tool call. message_log runs first on ingress to record raw traffic.
+
+[security_extensions.message_log]
+entrypoint = "agent_applications.trustbridge_demo.message_log:MessageLogExtension"
+
+[security_extensions.trustbridge]
+entrypoint = "security_extensions.trustbridge:TrustBridgeExtension"
+
+[security_extensions.trustbridge.options]
+decision_log = "agent_applications/trustbridge_demo/runtime/trustbridge_log.jsonl"
+
+[entities.reader]
+host = "127.0.0.1"
+port = 8021
+endpoint = "http://127.0.0.1:8021/nlip"
+
+[entities.reader.security]
+ingress = ["message_log", "trustbridge"]
+egress = ["trustbridge", "message_log"]
+
+[entities.executor]
+host = "127.0.0.1"
+port = 8022
+endpoint = "http://127.0.0.1:8022/nlip"
+
+[entities.executor.security]
+ingress = ["message_log", "trustbridge"]
+egress = ["trustbridge", "message_log"]
+
+[user]
+default_target = "reader"

@@ -6,10 +6,12 @@ side-effecting tools of its own, so anything it wants done goes through delegati
 
 from __future__ import annotations
 
+import httpx
 from claude_agent_sdk import create_sdk_mcp_server, tool
 
 from nlip_sdk import NLIPClient, NLIPMessage, NLIPServer, NLIPSession
 from nlip_sdk.nlip_security_extensions import SecurityExtensionManager
+from security_extensions.trustbridge import RUNTIME, claude_hooks, link_outbound
 
 from ._config import CONFIG
 from .claude_agent import ClaudeAgent
@@ -46,11 +48,17 @@ class ReaderNLIPAgent(NLIPServer):
             self.nlip_client.tool_input_schema,
         )
         async def send_nlip_message(arguments: dict) -> dict:
-            answer = await self.nlip_client.send_nlip_message(
-                str(arguments["destination"]).casefold(),
-                str(arguments["message"]),
-                scope=session.id,
-            )
+            destination = str(arguments["destination"]).casefold()
+            # Tell TrustBridge which inbound session this delegation acts for, so the
+            # outbound request carries that session's grant and provenance.
+            outbound = self.nlip_client.session(destination, scope=session.id)
+            link_outbound(outbound.id, session.id)
+            try:
+                answer = await self.nlip_client.send_nlip_message(
+                    destination, str(arguments["message"]), scope=session.id
+                )
+            except httpx.HTTPStatusError as error:
+                answer = f"The {destination} agent rejected the request: {error.response.text}"
             return {"content": [{"type": "text", "text": answer}]}
 
         agent = ClaudeAgent(
@@ -60,6 +68,7 @@ class ReaderNLIPAgent(NLIPServer):
                 "nlip": create_sdk_mcp_server("nlip", tools=[send_nlip_message]),
             },
             allowed_tools=["mcp__docs__read_document", "mcp__nlip__send_nlip_message"],
+            hooks=claude_hooks(session.id) if RUNTIME.enabled else None,
         )
         await agent.__aenter__()
         self._agents[session.id] = agent
@@ -67,6 +76,7 @@ class ReaderNLIPAgent(NLIPServer):
     async def session_ended(self, session: NLIPSession) -> None:
         agent = self._agents.pop(session.id, None)
         self.nlip_client.clear_scope(session.id)
+        RUNTIME.forget(session.id)
         if agent is not None:
             await agent.__aexit__(None, None, None)
 

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from nlip_sdk import NLIPMessage, NLIPServer, NLIPSession
 from nlip_sdk.nlip_security_extensions import SecurityExtensionManager
+from security_extensions.trustbridge import RUNTIME, claude_hooks
 
 from ._config import CONFIG
 from .claude_agent import ClaudeAgent
@@ -38,12 +39,14 @@ class ExecutorNLIPAgent(NLIPServer):
                 "mcp__workspace__save_summary",
                 "mcp__workspace__send_email",
             ],
+            hooks=claude_hooks(session.id) if RUNTIME.enabled else None,
         )
         await agent.__aenter__()
         self._agents[session.id] = agent
 
     async def session_ended(self, session: NLIPSession) -> None:
         agent = self._agents.pop(session.id, None)
+        RUNTIME.forget(session.id)
         if agent is not None:
             await agent.__aexit__(None, None, None)
 
