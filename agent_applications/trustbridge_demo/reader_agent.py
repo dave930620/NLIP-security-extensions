@@ -62,6 +62,7 @@ class ReaderNLIPAgent(NLIPServer):
             return {"content": [{"type": "text", "text": answer}]}
 
         agent = ClaudeAgent(
+            name=ENTITY_NAME,
             system_prompt=SYSTEM_PROMPT,
             mcp_servers={
                 "docs": document_tools(),

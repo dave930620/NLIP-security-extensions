@@ -33,6 +33,7 @@ class ExecutorNLIPAgent(NLIPServer):
 
     async def session_started(self, session: NLIPSession) -> None:
         agent = ClaudeAgent(
+            name=ENTITY_NAME,
             system_prompt=SYSTEM_PROMPT,
             mcp_servers={"workspace": workspace_tools()},
             allowed_tools=[

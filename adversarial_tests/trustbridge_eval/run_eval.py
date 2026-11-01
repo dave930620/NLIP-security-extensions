@@ -23,6 +23,7 @@ from pathlib import Path
 
 import httpx
 
+from agent_applications.trustbridge_demo.claude_agent import read_usage_log
 from agent_applications.trustbridge_demo.message_log import read_nlip_log
 from agent_applications.trustbridge_demo.tools import SUMMARY_DIR, read_mail_log
 from nlip_sdk import NLIPClient, NLIPMessage, load_config
@@ -134,7 +135,7 @@ def score(case: dict, emails: list[dict], nlip: list[dict], decisions: list[dict
 async def run_case(client_config: dict, case: dict) -> dict:
     (SUMMARY_DIR / SUMMARY_NAME).unlink(missing_ok=True)
     emails_before, nlip_before = len(read_mail_log()), len(read_nlip_log())
-    decisions_before = len(read_decisions())
+    decisions_before, usage_before = len(read_decisions()), len(read_usage_log())
     request = REQUESTS[case["task"]].format(**case)
     # Every configuration gets the same signed grant, so inputs are identical.
     message = NLIPMessage.text(request)
@@ -153,11 +154,18 @@ async def run_case(client_config: dict, case: dict) -> dict:
     emails = read_mail_log()[emails_before:]
     nlip = read_nlip_log()[nlip_before:]
     decisions = read_decisions()[decisions_before:]
+    usage = read_usage_log()[usage_before:]
     return {
         **case,
         "request": request,
         **score(case, emails, nlip, decisions),
         "latency_s": round(elapsed, 2),
+        # API-price equivalent reported by the SDK, summed over both agents.
+        "cost_usd": round(sum(u["cost_usd"] or 0 for u in usage), 5),
+        "tokens": sum(
+            sum(v for k, v in (u["usage"] or {}).items() if k.endswith("tokens") and isinstance(v, int))
+            for u in usage
+        ),
         "emails": emails,
         "denials": [d for d in decisions if d["decision"] == "deny"],
         "answer": answer,
