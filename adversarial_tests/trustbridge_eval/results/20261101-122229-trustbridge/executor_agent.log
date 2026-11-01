@@ -1,0 +1,33 @@
+INFO:     Started server process [99254]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8022 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57123 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57147 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57199 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57222 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57248 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57279 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57308 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57331 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57359 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57387 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57412 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57436 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57460 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57487 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57517 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57542 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57569 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57600 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57625 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57655 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57681 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57709 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57733 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57761 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [99254]
