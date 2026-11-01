@@ -1,0 +1,2021 @@
+INFO:     Started server process [774]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8021 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57805 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57807 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57830 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57854 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57881 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57907 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57936 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57964 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57990 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58014 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58041 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58069 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58105 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58128 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58137 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58147 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58156 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58166 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58178 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58189 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58199 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58223 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58233 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58243 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58253 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58265 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58276 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58286 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58296 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58306 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58316 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58326 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58336 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58348 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58359 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58369 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58379 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58389 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58399 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58409 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     127.0.0.1:58419 - "POST /nlip HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1194, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 181, in post_nlip
+    return (await self.process_exchange(request)).to_dict()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/nlip_sdk/nlip_server/server.py", line 134, in process_exchange
+    result = await self.handle(request, session)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/reader_agent.py", line 88, in handle
+    return NLIPMessage.text(await self._agents[session.id].chat(text))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chengchungyun/Desktop/UIUC class/Semester3/cs598/NLIP-security-extensions/agent_applications/trustbridge_demo/claude_agent.py", line 80, in chat
+    raise RuntimeError(f"Claude request failed: {detail}")
+RuntimeError: Claude request failed: You've hit your session limit · resets 2:50pm (America/Chicago)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [774]
