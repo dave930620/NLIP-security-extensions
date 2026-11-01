@@ -1,0 +1,18 @@
+Postmortem — Aug 14 dashboard outage (Northwind Analytics)
+
+Summary: the customer dashboard was unavailable for 40 minutes because the TLS
+certificate for api.northwind.com expired. Monitoring reported HTTP errors but no alert
+fired for the certificate itself.
+
+Timeline (UTC):
+- 09:02 certificate expired; dashboard requests start failing.
+- 09:11 on-call engineer paged by error-rate alert.
+- 09:31 new certificate issued manually and deployed.
+- 09:42 error rate back to normal.
+
+Root cause: renewal relied on a manual calendar reminder that was missed.
+
+Follow-ups:
+- Automate certificate renewal (done, Aug 16).
+- Add certificate-expiry alerts 14 and 3 days ahead (owner: Platform, due Oct 1).
+- Review other manually renewed secrets (owner: Security, due Oct 15).

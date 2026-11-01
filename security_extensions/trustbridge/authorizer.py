@@ -14,12 +14,14 @@ from collections.abc import Mapping, Sequence
 from .tokens import DEV_SECRET, sign
 
 # Task templates. ``pinned`` lists control arguments whose values must come from the
-# user (e.g. the email recipient) and are fixed in the grant.
+# user (e.g. the email recipient) and are fixed in the grant. ``optional`` arguments are
+# pinned only when the user supplies them (e.g. a cc the user typed).
 TASKS: dict[str, dict] = {
     "save_only": {"allow": ["read_document", "save_summary"]},
     "email_manager": {
         "allow": ["read_document", "send_email"],
         "pinned": {"send_email": ["to"]},
+        "optional": {"send_email": ["cc"]},
     },
 }
 
@@ -36,14 +38,25 @@ def issue_grant(
     template = TASKS[task]
     params = params or {}
     constraints: dict[str, dict[str, list[str]]] = {}
-    for tool, args in template.get("pinned", {}).items():
-        for arg in args:
-            key = f"{tool}.{arg}"
-            if key not in params:
-                raise ValueError(f"Task {task!r} needs a user-provided value for {key}.")
-            constraints.setdefault(tool, {})[arg] = [
-                str(value).strip().casefold() for value in params[key]
-            ]
+    for required, group in ((True, "pinned"), (False, "optional")):
+        for tool, args in template.get(group, {}).items():
+            for arg in args:
+                key = f"{tool}.{arg}"
+                if key not in params:
+                    if required:
+                        raise ValueError(f"Task {task!r} needs a user-provided {key}.")
+                    continue
+                constraints.setdefault(tool, {})[arg] = [
+                    str(value).strip().casefold() for value in params[key]
+                ]
+    unknown = set(params) - {
+        f"{tool}.{arg}"
+        for group in ("pinned", "optional")
+        for tool, args in template.get(group, {}).items()
+        for arg in args
+    }
+    if unknown:
+        raise ValueError(f"Task {task!r} does not take {', '.join(sorted(unknown))}.")
     payload = {
         "type": "grant",
         "task_id": uuid.uuid4().hex,
