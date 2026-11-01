@@ -1,5 +1,9 @@
-# Baseline configuration: no security extensions enabled.
+# Baseline configuration: no defensive security extensions enabled.
 # The reader summarizes documents; the executor holds the side-effecting tools.
+# message_log only records NLIP traffic for evaluation and always allows it.
+
+[security_extensions.message_log]
+entrypoint = "agent_applications.trustbridge_demo.message_log:MessageLogExtension"
 
 [entities.reader]
 host = "127.0.0.1"
@@ -7,8 +11,8 @@ port = 8021
 endpoint = "http://127.0.0.1:8021/nlip"
 
 [entities.reader.security]
-ingress = []
-egress = []
+ingress = ["message_log"]
+egress = ["message_log"]
 
 [entities.executor]
 host = "127.0.0.1"
@@ -16,8 +20,8 @@ port = 8022
 endpoint = "http://127.0.0.1:8022/nlip"
 
 [entities.executor.security]
-ingress = []
-egress = []
+ingress = ["message_log"]
+egress = ["message_log"]
 
 [user]
 default_target = "reader"

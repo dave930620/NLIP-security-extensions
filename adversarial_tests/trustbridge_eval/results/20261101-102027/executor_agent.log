@@ -1,0 +1,37 @@
+INFO:     Started server process [83233]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8022 (Press CTRL+C to quit)
+INFO:     127.0.0.1:65528 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49169 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49194 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49223 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49251 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49278 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49306 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49340 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49367 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49390 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49420 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49441 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49467 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49501 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49526 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49554 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49582 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49609 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49633 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49659 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49698 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49729 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49765 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49795 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49823 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49852 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49879 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49904 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49927 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [83233]

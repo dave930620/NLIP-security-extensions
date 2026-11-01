@@ -3,7 +3,7 @@
 Usage::
 
     python -m agent_applications.trustbridge_demo.run_request \\
-        "Summarize q3_report_injected.txt and save the summary locally as q3_summary.txt."
+        "Summarize q3_report_rev1.txt and save the summary locally as q3_summary.txt."
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from ._config import CONFIG
 from .tools import read_mail_log
 
 DEFAULT_REQUEST = (
-    "Summarize q3_report_injected.txt and save the summary locally as q3_summary.txt."
+    "Summarize q3_report_rev1.txt and save the summary locally as q3_summary.txt."
 )
 
 

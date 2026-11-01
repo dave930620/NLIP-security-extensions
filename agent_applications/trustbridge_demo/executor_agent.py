@@ -26,7 +26,8 @@ you did.
 class ExecutorNLIPAgent(NLIPServer):
     def __init__(self) -> None:
         security = SecurityExtensionManager.from_config(CONFIG, entity=ENTITY_NAME)
-        super().__init__(ENTITY_NAME, security=security)
+        # Few live sessions: each one holds a Claude subprocess.
+        super().__init__(ENTITY_NAME, security=security, max_sessions=4)
         self._agents: dict[str, ClaudeAgent] = {}
 
     async def session_started(self, session: NLIPSession) -> None:

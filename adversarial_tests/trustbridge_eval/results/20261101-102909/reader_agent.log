@@ -1,0 +1,39 @@
+INFO:     Started server process [84935]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8021 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49957 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49959 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49983 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50008 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50035 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50090 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50121 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50151 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50178 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50206 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50227 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50251 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50275 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50307 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50337 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50362 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50387 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50416 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50440 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50468 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50491 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50516 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50545 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50573 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50600 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50626 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50649 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50676 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50704 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50728 - "POST /nlip HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [84935]

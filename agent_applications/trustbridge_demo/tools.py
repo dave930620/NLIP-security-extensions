@@ -65,6 +65,7 @@ async def save_summary(args: dict[str, Any]) -> dict[str, Any]:
         "type": "object",
         "properties": {
             "to": {"type": "string"},
+            "cc": {"type": "string", "description": "Comma-separated, optional."},
             "subject": {"type": "string"},
             "body": {"type": "string"},
             "attachment": {"type": "string", "description": "Document name, optional."},
